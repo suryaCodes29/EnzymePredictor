@@ -1,7 +1,12 @@
+import os
+import sys
 from dotenv import load_dotenv
 from flask import Flask, jsonify
 from flask_cors import CORS
 from flask_socketio import SocketIO
+
+# Add current directory to path to ensure modules like 'routes' are found on Render
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from config import Config
 from extensions import db
